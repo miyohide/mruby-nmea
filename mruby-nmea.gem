@@ -1,0 +1,6 @@
+name: mruby-nmea
+description: Nmea class
+author: miyohide
+website: https://github.com/miyohide/mruby-nmea
+protocol: git
+repository: https://github.com/miyohide/mruby-nmea.git
