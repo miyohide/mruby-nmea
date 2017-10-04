@@ -1,1 +1,4 @@
 mruby/
+.yardoc
+doc/
+
