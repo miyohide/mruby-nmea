@@ -2,16 +2,14 @@
 ## Nmea Test
 ##
 
-assert("Nmea#hello") do
-  t = Nmea.new "hello"
-  assert_equal("hello", t.hello)
+assert("$GPGGA,085120.307,3541.1493,N,13945.3994,E,1,08,1.0,6.9,M,35.9,M,,0000*5E") do
+  n = Nmea.new
+  n.parse('$GPGGA,085120.307,3541.1493,N,13945.3994,E,1,08,1.0,6.9,M,35.9,M,,0000*5E')
+  assert_equal("08:51:20 lat = N35.685821666667 , lon = E139.75665666667", n.to_s)
 end
 
-assert("Nmea#bye") do
-  t = Nmea.new "hello"
-  assert_equal("hello bye", t.bye)
-end
-
-assert("Nmea.hi") do
-  assert_equal("hi!!", Nmea.hi)
+assert("$GPRMC,085120.307,A,3541.1493,N,13945.3994,E,000.0,240.3,181211,,,A*6A") do
+  n = Nmea.new
+  n.parse('$GPRMC,085120.307,A,3541.1493,N,13945.3994,E,000.0,240.3,181211,,,A*6A')
+  assert_equal("2011/12/18 08:51:20 lat = N35.685821666667 , lon = E139.75665666667", n.to_s)
 end
