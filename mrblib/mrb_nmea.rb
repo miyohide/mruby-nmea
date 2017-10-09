@@ -44,14 +44,14 @@ class Nmea
     lat_f = @latitude.to_f
     d = (lat_f/100).floor
     m = (lat_f - 100*d)/60
-    "#{@ns}#{d + m}"
+    "%s%3.5f" % [@ns, d + m]
   end
 
   def longitude
     lon_f = @longitude.to_f
     d = (lon_f/100).floor
     m = (lon_f - 100*d)/60
-    "#{@ew}#{d + m}"
+    "%s%-3.5f" % [@ew, d+m]
   end
 
   def time
